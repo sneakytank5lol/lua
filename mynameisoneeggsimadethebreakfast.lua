@@ -1,3 +1,5 @@
+print('am i running yes')
+
 local rf = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local win = rf:CreateWindow({
    Name = "sneak's forsaken cheats whatever",
@@ -23,12 +25,14 @@ local win = rf:CreateWindow({
 
 local forsakeningit = win:CreateTab("main")
 local forsakeningitgens = win:CreateTab("gens")
---[[rivals:CreateButton({
-	Name = "just die LOL",
+local forsakeningitwaypoints = win:CreateTab("wpoints")
+
+forsakeningit:CreateButton({
+	Name = "'Maybe it's time to rage quit, eh?' (die)",
 	Callback = function()
 	game.Players.LocalPlayer.Character.Humanoid.Health = 0
 	end,
-})]]
+})
 
 forsakeningit:CreateSlider({
    Name = "walkspeed",
@@ -65,6 +69,15 @@ forsakeningit:CreateButton({
 			 end
 		  end
 	   end
+	   for _,i in workspace:GetDescendants() do
+		   if i:IsA("Model") then
+			   if i.Name == "Generator" then
+				   local esp = Instance.new("Highlight")
+				   esp.Parent = i
+				   esp.FillColor = Color3.fromRGB(0, 0, 255)
+			   end
+		   end
+ 	   end
 	   for _,i in workspace.Players.Killers:GetDescendants() do
 		if i:IsA("Model") then
 			 if i:FindFirstChild("Humanoid") then
@@ -108,6 +121,12 @@ sprinting = false
 forsakeningit:CreateButton({
    Name = "fake sprint (RightShift, ONLY PC)",
    Callback = function()
+      game:GetService("UserInputService").InputBegan:Connect(function(a,e)
+	  if a.KeyCode == Enum.KeyCode.RightShift then
+	  for i,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()) do v:Stop() end
+	  end
+	  end)
+
       while wait() do
 	  if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.RightShift) then
 	  if sprinting == false then
@@ -119,10 +138,22 @@ forsakeningit:CreateButton({
 	  end
 	  game.Players.LocalPlayer.Character.SpeedMultipliers.Sprinting.Value = 1.733
 	  else
-	  for i,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()) do v:Stop() end
+	  animation = Instance.new("Animation")
+      animation.AnimationId = "http://www.roblox.com/Asset?ID=131082534135875"
+	  animationTrack = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(animation)
+      animationTrack:Play()
 	  game.Players.LocalPlayer.Character.SpeedMultipliers.Sprinting.Value = 1
 	  sprinting = false
 	  end
+	  end
+  end,
+})
+
+forsakeningit:CreateButton({
+   Name = "disable animations lol",
+   Callback = function()
+      while wait() do
+	  for i,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()) do v:Stop() end
 	  end
   end,
 })
@@ -169,13 +200,110 @@ forsakeningitgens:CreateButton({
 forsakeningitgens:CreateButton({
    Name = "auto-gen (instant, only usable in privs)",
    Callback = function()
-    while true do
+    spawn(function()
+	while true do
 	for _,i in workspace.Map.Ingame.Map:GetChildren() do
 	if i.Name == "Generator" then
 		i.Remotes.RE:FireServer()
 	end
     end
-    wait(0.1) 
+    wait(0.03) 
+    end
+	end)
+	spawn(function()
+	while true do
+	for _,i in workspace.Map.Ingame.Map:GetChildren() do
+	if i.Name == "Generator" then
+		i.Remotes.RE:FireServer()
+	end
+    end
+    wait(0.03) 
+    end
+	end)
+	spawn(function()
+	while true do
+	for _,i in workspace.Map.Ingame.Map:GetChildren() do
+	if i.Name == "Generator" then
+		i.Remotes.RE:FireServer()
+	end
+    end
+    wait(0.03) 
+    end
+	end)
+  end,
+})
+
+forsakeningitgens:CreateButton({
+   Name = "do generator hell 2 automatically (get in generator)",
+   Callback = function()
+    while true do
+	for _,i in workspace.Map.Ingame.Map.Generators:GetChildren() do
+	i.Remotes.RE:FireServer()
+    end
+    wait(0.03) 
     end
   end,
+})
+
+waypoint = nil
+previouspoint = nil
+
+forsakeningitwaypoints:CreateButton({
+	Name = "create waypoint",
+	Callback = function()
+	waypoint = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+	rf:Notify({
+    Title = "created waypoint",
+    Content = "wahoo",
+    Duration = 6.5,
+    Image = "circle-ellipsis",
+    })
+	end,
+})
+
+forsakeningitwaypoints:CreateButton({
+	Name = "go to waypoint",
+	Callback = function()
+	previouspoint = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = waypoint
+	rf:Notify({
+    Title = "went to waypoint",
+    Content = "wahoo",
+    Duration = 6.5,
+    Image = "circle-ellipsis",
+    })
+	end,
+})
+
+forsakeningitwaypoints:CreateButton({
+	Name = "go to previous point",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = previouspoint
+	rf:Notify({
+    Title = "went to previous point",
+    Content = "wahoo",
+    Duration = 6.5,
+    Image = "circle-ellipsis",
+    })
+	end,
+})
+
+forsakeningitwaypoints:CreateButton({
+	Name = "go to killer",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = previouspoint
+	for _,i in workspace.Players.Killers:GetDescendants() do
+		if i:IsA("Model") then
+			if i:FindFirstChild("Humanoid") then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = i.HumanoidRootPart.CFrame
+			end
+		end
+	end
+	rf:Notify({
+    Title = "went to killer",
+    Content = "wahoo",
+    Duration = 6.5,
+    Image = "circle-ellipsis",
+    })
+	end,
 })
