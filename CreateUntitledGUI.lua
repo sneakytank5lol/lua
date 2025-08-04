@@ -336,3 +336,6 @@ TextButton.MouseButton1Click:Connect(function()
 		Active = false
 	end
 end)
+
+UntitledGUI.Parent = game.CoreGui
+ScreenGui.Parent = game.CoreGui
