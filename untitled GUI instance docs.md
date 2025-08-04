@@ -15,6 +15,9 @@ game.CoreGui.UntitledGUI.Frame.Frame.Button4Menu -- Button4Menu
 ## Button Template (Use :Clone() and .Parent it to a menu scrolling frame)
 game.CoreGui.UntitledGUI.Frame.Frame.Button1Menu.Template
 
+## TextBox Template (Use :Clone() and .Parent it to a menu scrolling frame)
+game.CoreGui.UntitledGUI.Frame.Frame.Button1Menu.TemplateBox
+
 ## Menu Buttons
 game.CoreGui.UntitledGUI.Frame.Frame.Button1 -- Button1
 
