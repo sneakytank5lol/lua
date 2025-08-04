@@ -118,6 +118,7 @@ TemplateBox.Font = Enum.Font.Code
 TemplateBox.PlaceholderText = "Example"
 TemplateBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 TemplateBox.TextSize = 14.000
+TemplateBox.Text = ""
 
 UIListLayout.Parent = Button1Menu
 UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
