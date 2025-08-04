@@ -34,6 +34,13 @@ forsakeningit:CreateButton({
 	end,
 })
 
+forsakeningit:CreateButton({
+	Name = "lobby time",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.Position = Vector3.new(-3552.580078125, 11.772575378417969, 249.18626403808594)
+	end,
+})
+
 forsakeningit:CreateSlider({
    Name = "walkspeed",
    Range = {12, 100},
