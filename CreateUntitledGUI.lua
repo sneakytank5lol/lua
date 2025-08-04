@@ -9,6 +9,7 @@ local Frame_2 = Instance.new("Frame")
 local Title = Instance.new("TextLabel")
 local Button1Menu = Instance.new("ScrollingFrame")
 local Template = Instance.new("TextButton")
+local TemplateBox = Instance.new("TextBox")
 local UIListLayout = Instance.new("UIListLayout")
 local Author = Instance.new("TextLabel")
 local Button1 = Instance.new("TextButton")
@@ -104,6 +105,19 @@ Template.Font = Enum.Font.Code
 Template.Text = "Example"
 Template.TextColor3 = Color3.fromRGB(255, 255, 255)
 Template.TextSize = 14.000
+
+TemplateBox.Name = "TemplateBox"
+TemplateBox.Parent = Button1Menu
+TemplateBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TemplateBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TemplateBox.BorderSizePixel = 0
+TemplateBox.Position = UDim2.new(0.0721649453, 0, 0, 0)
+TemplateBox.Size = UDim2.new(0, 222, 0, 40)
+TemplateBox.Visible = false
+TemplateBox.Font = Enum.Font.Code
+TemplateBox.PlaceholderText = "Example"
+TemplateBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TemplateBox.TextSize = 14.000
 
 UIListLayout.Parent = Button1Menu
 UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
