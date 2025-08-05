@@ -37,6 +37,18 @@ Button.Parent = game.CoreGui.UntitledGUI.Frame.Frame.Button1Menu
 Button.MouseButton1Click:Connect(function()
 	game.Players.LocalPlayer.Boosts["Faster Sprint"].Value = 5
 end)
+local Button = game.CoreGui.UntitledGUI.Frame.Frame.Button1Menu.Template:Clone()
+Button.Visible = true
+Button.Text = "Remove..highlights? Maybe."
+Button.Parent = game.CoreGui.UntitledGUI.Frame.Frame.Button1Menu
+Button.MouseButton1Click:Connect(function()
+	for _,i in workspace:GetDescendants() do
+		if i:IsA("Highlight") then
+			print("Detected highlight.. removing.")
+			i:Destroy()
+		end
+	end
+end)
 
 local Button = game.CoreGui.UntitledGUI.Frame.Frame.Button1Menu.Template:Clone()
 Button.Visible = true
@@ -196,5 +208,6 @@ Button.Parent = game.CoreGui.UntitledGUI.Frame.Frame.Button3Menu
 Button.MouseButton1Click:Connect(function()
 	 game.Players.LocalPlayer.Character.HumanoidRootPart.Position = Vector3.new(729.0956420898438, 197.14404296875, 920.9494018554688)
 end)
+
 
 
