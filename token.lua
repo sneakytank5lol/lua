@@ -117,7 +117,7 @@ Button.Text = "Glass ESP (press in game)"
 Button.Parent = game.CoreGui.UntitledGUI.Frame.Frame.Button1Menu
 Button.MouseButton1Click:Connect(function()
 	game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Red..is bad!"
+	Title = "Red..is bad!",
 	Text = "The stuff highlighted in red is bad. Don't jump on it!"
     })
 	for _,i in workspace:GetDescendants() do
