@@ -106,6 +106,30 @@ end)
 
 local Button = game.CoreGui.UntitledGUI.Frame.Frame.Button1Menu.Template:Clone()
 Button.Visible = true
+Button.Text = "Tug of War"
+Button.Parent = game.CoreGui.UntitledGUI.Frame.Frame.Button1Menu
+Button.BackgroundTransparency = 1
+
+local Button = game.CoreGui.UntitledGUI.Frame.Frame.Button1Menu.Template:Clone()
+Button.Visible = true
+Button.Text = "Pull (press in game)"
+Button.Parent = game.CoreGui.UntitledGUI.Frame.Frame.Button1Menu
+Button.MouseButton1Click:Connect(function()
+	game:GetService("ReplicatedStorage").Remotes.TemporaryReachedBindable:FireServer({["IHateYou"] = true})
+end)
+
+local Button = game.CoreGui.UntitledGUI.Frame.Frame.Button1Menu.Template:Clone()
+Button.Visible = true
+Button.Text = "Insta-win (press in game)"
+Button.Parent = game.CoreGui.UntitledGUI.Frame.Frame.Button1Menu
+Button.MouseButton1Click:Connect(function()
+	for i=1,40 do
+		game:GetService("ReplicatedStorage").Remotes.TemporaryReachedBindable:FireServer({["IHateYou"] = true})
+	end
+end)
+
+local Button = game.CoreGui.UntitledGUI.Frame.Frame.Button1Menu.Template:Clone()
+Button.Visible = true
 Button.Text = "Jump Rope"
 Button.Parent = game.CoreGui.UntitledGUI.Frame.Frame.Button1Menu
 Button.BackgroundTransparency = 1
