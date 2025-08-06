@@ -123,8 +123,8 @@ Button.Visible = true
 Button.Text = "Insta-win (press in game)"
 Button.Parent = game.CoreGui.UntitledGUI.Frame.Frame.Button1Menu
 Button.MouseButton1Click:Connect(function()
-	for i=1,40 do
-		game:GetService("ReplicatedStorage").Remotes.TemporaryReachedBindable:FireServer({["IHateYou"] = true})
+	while true do
+	    game:GetService("ReplicatedStorage").Remotes.TemporaryReachedBindable:FireServer({["IHateYou"] = true})
 	end
 end)
 
