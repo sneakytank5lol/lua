@@ -1,3 +1,7 @@
+if game.CoreGui:FindFirstChild("UntitledGUI") then
+	game.CoreGui.UntitledGUI:Destroy()
+end
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/sneakytank5lol/lua/refs/heads/main/CreateUntitledGUI.lua"))()
 
 -- game.CoreGui.UntitledGUI.Frame.Frame -- GUI
@@ -13,6 +17,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/sneakytank5lol/lua/re
 -- game.CoreGui.UntitledGUI.Frame.Frame.Author -- Author
 
 -- Untitled GUI init
+
 game.CoreGui.UntitledGUI.Frame.Frame.Title.Text = "-- sneaky's squid gay/ink game gui --"
 game.CoreGui.UntitledGUI.Frame.Frame.Author.Text = "Script and GUI by sneaky"
 
@@ -71,10 +76,16 @@ Button.BackgroundTransparency = 1
 
 local Button = game.CoreGui.UntitledGUI.Frame.Frame.Button1Menu.Template:Clone()
 Button.Visible = true
-Button.Text = "Nothing yet, looks like you're gonna have to do this legit!"
-Button.TextScaled = true
+Button.Text = "Insta-win (Not sure if working)"
 Button.Parent = game.CoreGui.UntitledGUI.Frame.Frame.Button1Menu
-Button.BackgroundTransparency = 1
+Button.MouseButton1Click:Connect(function()
+	local args = {
+	{
+		Completed = true
+	}
+    }
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("DALGONATEMPREMPTE"):FireServer(unpack(args))
+end)
 
 local Button = game.CoreGui.UntitledGUI.Frame.Frame.Button1Menu.Template:Clone()
 Button.Visible = true
@@ -120,11 +131,12 @@ end)
 
 local Button = game.CoreGui.UntitledGUI.Frame.Frame.Button1Menu.Template:Clone()
 Button.Visible = true
-Button.Text = "Insta-win (press in game)"
+Button.Text = "Auto Pull (press in game)"
 Button.Parent = game.CoreGui.UntitledGUI.Frame.Frame.Button1Menu
 Button.MouseButton1Click:Connect(function()
 	while true do
 	    game:GetService("ReplicatedStorage").Remotes.TemporaryReachedBindable:FireServer({["IHateYou"] = true})
+		wait(0.03)
 	end
 end)
 
@@ -160,9 +172,9 @@ Button.MouseButton1Click:Connect(function()
 	if i:GetAttribute("exploitingisevil") then
 		local ib = Instance.new("Highlight") 
 		ib.Parent = i.Parent
-		ib.OutlineColor = Color3.fromRGB(0,0,255)
+		ib.OutlineColor = Color3.fromRGB(255,0,0)
 		ib.FillTransparency = 0
-		ib.FillColor = Color3.fromRGB(0, 0, 255)
+		ib.FillColor = Color3.fromRGB(255, 0, 0)
 	end
     end
 end)
@@ -232,6 +244,5 @@ Button.Parent = game.CoreGui.UntitledGUI.Frame.Frame.Button3Menu
 Button.MouseButton1Click:Connect(function()
 	 game.Players.LocalPlayer.Character.HumanoidRootPart.Position = Vector3.new(729.0956420898438, 197.14404296875, 920.9494018554688)
 end)
-
 
 
