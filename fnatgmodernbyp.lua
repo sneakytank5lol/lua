@@ -16,7 +16,7 @@ queueteleport =  missing('function', queue_on_teleport or (syn and syn.queue_on_
 
 game.Players.LocalPlayer.OnTeleport:Connect(function(State)
 	if true then
-		queueteleport("task.wait(0.1) loadstring(game:HttpGet('https://raw.githubusercontent.com/sneakytank5lol/lua/refs/heads/main/fnatgmodernbyp.lua'))()")
+		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/sneakytank5lol/lua/refs/heads/main/fnatgmodernbyp.lua'))()")
 	end
 end)
 
