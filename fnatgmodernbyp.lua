@@ -13,9 +13,12 @@ queueteleport =  missing('function', queue_on_teleport or (syn and syn.queue_on_
 
 game.Players.LocalPlayer.OnTeleport:Connect(function(State)
 	if true then
-		queueteleport("game.Players.LocalPlayer.UserId = 605848501 loadstring(game:HttpGet('https://raw.githubusercontent.com/sneakytank5lol/lua/refs/heads/main/fnatgmodernbyp.lua'))()")
+		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/sneakytank5lol/lua/refs/heads/main/fnatgmodernbyp.lua'))()")
 	end
 end)
 
-if game.Players.LocalPlayer.PlayerGui.InfoGUI.Frame.Time.Text == 'you are not worthy.' then game:GetService('TeleportService'):Teleport(game.PlaceId, game.Players.LocalPlayer) end
-
+game.RunService.RenderStepped:Connect(function()
+pcall(function()
+	game.Players.LocalPlayer.PlayerScripts.Lool:Destroy()
+end)
+end)
