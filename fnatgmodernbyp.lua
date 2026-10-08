@@ -19,6 +19,7 @@ end)
 
 game.RunService.RenderStepped:Connect(function()
 pcall(function()
+				print('hi')
 	game.Players.LocalPlayer.PlayerScripts.Lool:Destroy()
 end)
 end)
