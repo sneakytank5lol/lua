@@ -1,8 +1,10 @@
+pcall(function()
 local a = game.Players.LocalPlayer.PlayerGui.InfoGUI.Frame.Time.LocalScript:Clone()
 game.Players.LocalPlayer.PlayerGui.InfoGUI.Frame.Time.LocalScript:Destroy()
 game.Players.LocalPlayer.UserId = 605848501
 a.Parent = game.Players.LocalPlayer.PlayerGui.InfoGUI.Frame.Time
 a.Enabled = true
+end)
 
 function missing(t, f, fallback)
 	if type(f) == t then return f end
