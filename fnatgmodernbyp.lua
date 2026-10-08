@@ -1,4 +1,5 @@
 pcall(function()
+game.Players.LocalPlayer.PlayerGui.InfoGUI.Frame.Time:WaitForChild("LocalScript")
 local a = game.Players.LocalPlayer.PlayerGui.InfoGUI.Frame.Time.LocalScript:Clone()
 game.Players.LocalPlayer.PlayerGui.InfoGUI.Frame.Time.LocalScript:Destroy()
 game.Players.LocalPlayer.UserId = 605848501
