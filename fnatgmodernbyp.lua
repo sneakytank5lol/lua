@@ -1,4 +1,8 @@
-
+--[[local a = game.Players.LocalPlayer.PlayerGui.InfoGUI.Frame.Time.LocalScript:Clone() 
+game.Players.LocalPlayer.PlayerGui.InfoGUI.Frame.Time.LocalScript:Destroy() 
+game.Players.LocalPlayer.UserId = 605848501
+a.Parent = game.Players.LocalPlayer.PlayerGui.InfoGUI.Frame.Time
+a.Enabled = true ]]
 
 function missing(t, f, fallback)
 	if type(f) == t then return f end
@@ -9,7 +13,7 @@ queueteleport =  missing('function', queue_on_teleport or (syn and syn.queue_on_
 
 game.Players.LocalPlayer.OnTeleport:Connect(function(State)
 	if true then
-		queueteleport("local a = game.Players.LocalPlayer.PlayerGui.InfoGUI.Frame.Time.LocalScript:Clone() game.Players.LocalPlayer.PlayerGui.InfoGUI.Frame.Time.LocalScript:Destroy() game.Players.LocalPlayer.UserId = 605848501 a.Parent = game.Players.LocalPlayer.PlayerGui.InfoGUI.Frame.Time a.Enabled = true loadstring(game:HttpGet('https://raw.githubusercontent.com/sneakytank5lol/lua/refs/heads/main/fnatgmodernbyp.lua'))()")
+		queueteleport("game.Players.LocalPlayer.UserId = 605848501 loadstring(game:HttpGet('https://raw.githubusercontent.com/sneakytank5lol/lua/refs/heads/main/fnatgmodernbyp.lua'))()")
 	end
 end)
 
